@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  background-color: #371B58;
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  font-family: 'Nunito', sans-serif;
+  color: #E9D5CA;
+}
+
+nav {
+  background-color: #4C3575;
+  opacity: .9;
+  position: relative;
+  align-items: center;
+  display: flex;
+  vertical-align: middle;
+  padding: 0 10px;
+  justify-content: space-between;
+}
+
+nav img {
+  height: 50px;
+  width: 50px;
+}
+
+nav a {
+  padding-left: 10px;
+  font-weight: bold;
+  color: #E9D5CA;
+  font-size: 2rem;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+}
+
+nav p {
+  padding-left: 10px;
+}
+
+nav div {
+  padding-right: 10px;
+}
+
+.content {
+  width: 600px;
+  min-height: 400px;
+  margin: 3em auto;
+  background-color: #363062;
+  height: 300px;
+  opacity: .5;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+
+.bottom {
+  margin-top: 3em;
+  background-color: #363062;
+  height: 100px;
+  opacity: .5;
+  border-radius: 10px;
+}
+
+#text {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#text>li {
+  padding: 0.5rem 1rem;
+}
+
+#text>li:nth-child(odd) {
+  background: #4D4C7D;
+}
+
+#input {
+  border: none;
+  padding: 0 1rem;
+  flex-grow: 1;
+  border-radius: 2rem;
+  margin: 0.25rem;
+}
+
+#input:focus {
+  outline: none;
+}
+
+#mailSymbol {
+  width: 50px;
+  height: 50px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Chat Forum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,500&family=Nunito&family=Tiro+Kannada&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/forum.css">
+</head>
+
+<body>
+  <nav>
+    <a href="/"><img src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png" alt="icon">
+      <p>Messaging App</p>
+    </a>
+    <div class="Links">
+      <a href="#">About</a>
+    </div>
+  </nav>
+
+  <div class="content">
+    <ul id="text"></ul>
+  </div>
+
+  <div class="bottom">
+    <form id="form" action="">
+      <input id="input" autocomplete="off" />
+      <button><img id="mailSymbol" src="https://cdn-icons-png.flaticon.com/512/786/786205.png" alt=""></button>
+    </form>
+  </div>
+  
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+
+    var form = document.getElementById("form");
+    var input = document.getElementById("input");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      if (input.value) {
+        socket.emit("chat message", input.value);
+        input.value = '';
+      }
+    });
+
+    socket.on('chat message', function(msg) {
+      var item = document.createElement('li');
+      item.textContent = msg;
+      text.appendChild(item);
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+  </script>
+
+</body>
+
+</html>
