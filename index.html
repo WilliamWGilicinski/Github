@@ -98,12 +98,12 @@
   <main class="px-3">
     <h1>Messaging App Placeholder</h1>
     <p class="lead">This messaging app is an easy access and fun to use chatroom that is designed using javascript so I have practice using what I learned</p>
-    <form id="form" action="">
+
+    <form id="form" action="message.html" method="post">
       <input id="input" autocomplete="off" />
-      <p class="lead">
-        <button type="submit" formaction="message" formmethod="get" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Get Started</button>
-      </p>
+        <a href = "/message"><button type="submit" formaction="message" formmethod="get" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Get Started</button></a>
     </form>
+
   </main>
 
   <footer class="mt-auto text-white-50">
@@ -118,10 +118,11 @@
     var form = document.getElementById("form");
     var input = document.getElementById("input");
 
+
+
     form.addEventListener("submit", function(e) {
-      e.preventDefault();
       if(input.value){
-        socket.emit("name", input.value);
+        socket.emit("temp", input.value);
         input.value = '';
       }
     });

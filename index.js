@@ -25,14 +25,27 @@ io.on('connection', (socket) => {
 });
 
 io.on('connection', (socket) => {
-  socket.on('chat message', (msg) => {
-    console.log("message: " + msg);
+  socket.on('chat message', (data) => {
+    console.log("user: " + data.username);
+    console.log("message: " + data.messages);
   });
 });
 
 io.on('connection', (socket) => {
-  socket.on('name', (name) => {
+  socket.on('working', msg => {
+    console.log(msg);
+  });
+});
+
+io.on('connection', (socket) => {
+  socket.on('temp', (name) => {
     console.log('User: ' + name);
+  });
+});
+
+io.on("connection", (socket) => {
+  socket.on('name info', (name) => {
+    console.log("User: " + name);
   });
 });
 
